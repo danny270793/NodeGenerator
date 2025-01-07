@@ -1,6 +1,6 @@
 # NodeGenerator
 
-[![Github pipeline status](https://github.com/danny270793/TSFramework/actions/workflows/releaser.yaml/badge.svg)](https://github.com/danny270793/nodegenerator/actions/workflows/release.yaml)
+[![Github pipeline status](https://github.com/danny270793/nodegenerator/actions/workflows/releaser.yaml/badge.svg)](https://github.com/danny270793/nodegenerator/actions/workflows/release.yaml)
 ![NPM Type Definitions](https://img.shields.io/npm/types/%40danny270793%2Fnodegenerator)
 
 [![install size](https://packagephobia.com/badge?p=@danny270793/nodegenerator)](https://packagephobia.com/result?p=@danny270793/nodegenerator)
