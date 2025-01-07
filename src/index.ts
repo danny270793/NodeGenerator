@@ -8,7 +8,7 @@ import { GitIgnore } from './libraries/gitignore';
 import { DotEnv } from './libraries/dotenv';
 
 async function main(): Promise<void> {
-    const cwd: string = process.cwd()
+    const packagePath: string = Path.join(__dirname, '..')
 
     const args: string[] = process.argv.slice(2);
     if (args.length === 0) {
@@ -52,7 +52,7 @@ async function main(): Promise<void> {
     await Terminal.run('npx tsc --init');
     Fs.mkdirSync(Path.join('.', 'src'), { recursive: true });
     Fs.copyFileSync(
-        Path.join(cwd, 'assets', 'index.ts'),
+        Path.join(packagePath, 'assets', 'index.ts'),
         Path.join('.', 'src', 'index.ts'),
     );
 
@@ -81,7 +81,7 @@ async function main(): Promise<void> {
     console.log('[*] Configuring license');
     await packageJson.set('license', 'MIT');
     const license: string = Fs.readFileSync(
-        Path.join(cwd, 'assets', 'license.md'),
+        Path.join(packagePath, 'assets', 'license.md'),
         'utf-8',
     );
     const newLicense: string = license
@@ -97,7 +97,7 @@ async function main(): Promise<void> {
         'typescript-eslint',
     ]);
     Fs.copyFileSync(
-        Path.join(cwd, 'assets', 'eslint.config.mjs'),
+        Path.join(packagePath, 'assets', 'eslint.config.mjs'),
         Path.join('.', 'eslint.config.mjs'),
     );
     await packageJson.script('lint', 'eslint --fix .');
@@ -105,7 +105,7 @@ async function main(): Promise<void> {
     console.log('[*] Configuring Prettier');
     await packageJson.installDev(['prettier']);
     Fs.copyFileSync(
-        Path.join(cwd, 'assets', '.prettierrc'),
+        Path.join(packagePath, 'assets', '.prettierrc'),
         Path.join('.', '.prettierrc'),
     );
     await packageJson.script('format', 'prettier --write .');
@@ -115,12 +115,12 @@ async function main(): Promise<void> {
     await packageJson.script('test', 'jest');
     await packageJson.script('test:watch', 'jest --watch');
     Fs.copyFileSync(
-        Path.join(cwd, 'assets', 'jest.config.ts'),
+        Path.join(packagePath, 'assets', 'jest.config.ts'),
         Path.join('.', 'jest.config.ts'),
     );
     Fs.mkdirSync(Path.join('.', 'tests'), { recursive: true });
     Fs.copyFileSync(
-        Path.join(cwd, 'assets', 'index.test.ts'),
+        Path.join(packagePath, 'assets', 'index.test.ts'),
         Path.join('.', 'tests', 'index.test.ts'),
     );
     await gitIgnore.push('.tests');
