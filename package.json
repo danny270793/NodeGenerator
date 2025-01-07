@@ -1,6 +1,6 @@
 {
     "name": "@danny270793/nodegenerator",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "./build/src/index.js",
     "bin": "./build/src/index.js",
     "files": [
