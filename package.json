@@ -1,14 +1,15 @@
 {
     "name": "@danny270793/nodegenerator",
-    "version": "1.0.1",
-    "main": "./build/src/index.js",
-    "bin": "./build/src/index.js",
+    "description": "Generates a node base scaffold project",
+    "version": "1.0.2",
     "files": [
-        "./src/**/*"
+        "./build/**/*"
     ],
+    "main": "./build/index.js",
+    "bin": "./build/index.js",
     "scripts": {
         "build": "tsc",
-        "start": "node ./build/src/index.js",
+        "start": "node ./build/index.js",
         "start:watch": "ts-node-dev --respawn ./src/index.ts",
         "lint": "eslint --fix .",
         "format": "prettier --write .",
@@ -19,14 +20,15 @@
         "type": "git",
         "url": "https://github.com/danny270793/nodegenerator"
     },
-    "keywords": [],
+    "keywords": [
+        "typescript", "eslint", "prettier", "jest", "ts-node-dev"
+    ],
     "author": {
         "email": "danny270793@icloud.com",
         "name": "Danny Vaca",
         "url": "https://danny270793.github.io"
     },
     "license": "MIT",
-    "description": "",
     "devDependencies": {
         "@eslint/js": "^9.17.0",
         "@types/jest": "^29.5.14",
