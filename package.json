@@ -1,7 +1,7 @@
 {
     "name": "@danny270793/nodegenerator",
     "description": "Generates a node base scaffold project",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "files": [
         "./build/**/*",
         "./assets/**/*"
