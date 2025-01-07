@@ -8,18 +8,20 @@ import { GitIgnore } from './libraries/gitignore';
 import { DotEnv } from './libraries/dotenv';
 
 async function main(): Promise<void> {
-    const args: string[] = process.argv.slice(2)
+    const args: string[] = process.argv.slice(2);
     if (args.length === 0) {
-        console.error(`missing <folderPath>\n\nussage:\n\tnpx @danny270793/nodegenerator <folderPath>`)
-        process.exit(1)
+        console.error(
+            `missing <folderPath>\n\nussage:\n\tnpx @danny270793/nodegenerator <folderPath>`,
+        );
+        process.exit(1);
     }
 
     const folderPath: string = args[0];
 
     console.log('[*] Deleting old folder');
-    if(Fs.existsSync(folderPath)) {
-        console.error(`Folder "${folderPath}" already exists, delete it first`)
-        process.exit(1)
+    if (Fs.existsSync(folderPath)) {
+        console.error(`Folder "${folderPath}" already exists, delete it first`);
+        process.exit(1);
     }
 
     console.log('[*] Creating new folder');
